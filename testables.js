@@ -48,6 +48,14 @@ function caesarCipher(str, shiftFactor) {
   return cipher;
 }
 
-function analyzeArray(arr) {}
+function analyzeArray(arr) {
+  const copy = [...arr];
+  copy.sort((a, b) => a - b);
+  const average = copy.reduce((acc, cur) => acc + cur, 0) / copy.length;
+  const min = copy[0];
+  const max = copy[copy.length - 1];
+  const { length } = copy;
+  return { average, min, max, length };
+}
 
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
