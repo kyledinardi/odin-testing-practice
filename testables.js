@@ -30,7 +30,23 @@ const calculator = {
   },
 };
 
-function caesarCipher(str, shiftFactor) {}
+function caesarCipher(str, shiftFactor) {
+  let cipher = '';
+  const upperCased = str.toUpperCase();
+
+  for (let i = 0; i < upperCased.length; i += 1) {
+    const charCode = upperCased.charCodeAt(i);
+
+    if (charCode <= 90 && charCode >= 65) {
+      const newCharCode = ((charCode - 65 + shiftFactor) % 26) + 65;
+      cipher = `${cipher}${String.fromCharCode(newCharCode)}`;
+    } else {
+      cipher = `${cipher}${upperCased.charAt(i)}`;
+    }
+  }
+
+  return cipher;
+}
 
 function analyzeArray(arr) {}
 

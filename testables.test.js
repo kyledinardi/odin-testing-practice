@@ -6,11 +6,11 @@ import {
   analyzeArray,
 } from './testables';
 
-test('capitalize() capitalizes', () => {
+test('capitalize() capitalizes first character', () => {
   expect(capitalize('capitalize')).toMatch(/Capitalize/);
 });
 
-test('reverseString() reverses', () => {
+test('reverseString() reverses string', () => {
   expect(reverseString('reverse')).toMatch(/esrever/);
 });
 
@@ -28,4 +28,8 @@ test('calculator.divide() divides', () => {
 
 test('calculator.multiply() multiplies', () => {
   expect(calculator.multiply(6, 2)).toBe(12);
+});
+
+test('ceasarCipher() creates cipher', () => {
+  expect(caesarCipher('ceasar cipher', 3)).toMatch(/FHDVDU FLSKHU/);
 });
